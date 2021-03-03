@@ -1,1 +1,18 @@
-<p>marcadores works!</p>
+<ul class="list-group">
+  <li (click)="agregarMarcador()" class="list-group-item list-group-item-info">
+    + agregar
+  </li>
+  <li
+    (click)="irMarcador(marker.marker!)"
+    (dblclick)="borrarMarcador(i)"
+    class="list-group-item"
+    *ngFor="let marker of marcadores; let i = index"
+    [ngStyle]="{
+      'background-color': marker.color
+    }"
+  >
+    Marker {{ i + 1 }}
+  </li>
+</ul>
+
+<div #map class="mapa-container"></div>
